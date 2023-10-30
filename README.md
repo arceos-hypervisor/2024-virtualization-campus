@@ -7,4 +7,9 @@
 
 ## 任务列表
 
-* [任务列表](./tasks/README.md)
+* [多核支持](./tasks/multi_core_support.md)
+* [多VM支持](./tasks/multi_vm_support.md)
+* [内存动态管理](./tasks/dynamic_memory_management.md)
+* [设备和中断虚拟化](./tasks/device_and_interrupt_virtualization.md)
+* [虚拟机迁移](./tasks/vm_migration.md)
+* [实时虚拟机](./tasks/real_time_vm.md)
