@@ -2,7 +2,7 @@
 
 ## Hypervisor讲解
 
-* [x86 Hypervisor介绍](./hypervisor/x86/README.md)
+* [x86-64 Hypervisor介绍](./hypervisor/x86_64/README.md)
 * [ARM Hypervisor介绍](./hypervisor/aarch64/README.md)
 
 ## 任务列表
