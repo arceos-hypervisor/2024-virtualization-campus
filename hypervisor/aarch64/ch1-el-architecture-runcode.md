@@ -59,7 +59,7 @@ cd ../kernel && make build ARCH=aarch64 LOG=warn
 在qemu中运行arceOS，并在arceOS上起虚拟机。
 ```shell
 # clone arceos
-git clone https://github.com/915604903T/arceos.git -b hypervisor --recurse-submodules
+git clone https://github.com/arceos-hypervisor/arceos.git -b hypervisor --recurse-submodules
 cd arceos
 
 # move nimbos image to arceos hv 
