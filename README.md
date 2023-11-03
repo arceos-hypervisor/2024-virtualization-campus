@@ -15,3 +15,8 @@
 * [实时虚拟机](./tasks/real_time_vm.md)
 
 ## 参考资料
+### aarch64
+- [Arm® Architecture Reference Manual for A-profile architecture](https://developer.arm.com/documentation/ddi0487/latest/)
+- [Arm® Architecture Registers for A-profile architecture](https://developer.arm.com/documentation/ddi0601/latest/)
+- [Armv8-A virtualization](https://developer.arm.com/-/media/Arm%20Developer%20Community/PDF/Learn%20the%20Architecture/Armv8-A%20virtualization.pdf?revision=a765a7df-1a00-434d-b241-357bfda2dd31)
+- [Arm® Exception model](https://developer.arm.com/-/media/Arm%20Developer%20Community/PDF/Learn%20the%20Architecture/Exception%20model.pdf?revision=a62f2bf2-b08a-4a4f-8cbe-38c67ddf4434)
