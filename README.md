@@ -13,3 +13,5 @@
 * [设备和中断虚拟化](./tasks/device_and_interrupt_virtualization.md)
 * [虚拟机迁移](./tasks/vm_migration.md)
 * [实时虚拟机](./tasks/real_time_vm.md)
+
+## 参考资料
