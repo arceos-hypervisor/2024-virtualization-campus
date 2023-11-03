@@ -1,4 +1,4 @@
-<img width="997" alt="image" src="https://github.com/arceos-hypervisor/2023-virtualization-campus/assets/39039541/af65c03b-3700-449e-9217-e94d4d2432e4"># 实时虚拟机
+# 实时虚拟机
 
 ## 任务描述：
 
