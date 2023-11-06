@@ -20,11 +20,11 @@
 * [莫策-ARMv8体系结构与硬件虚拟化](./PPT/莫策-ARMv8体系结构与硬件虚拟化.pdf)
 * [莫策-Rust-Shyper代码结构与设计实现](./PPT/莫策-Rust-Shyper代码结构与设计实现.pdf)
 * [齐呈祥-hypercraft设计理念与架构](./PPT/齐呈祥-hypercraft设计理念与架构.pdf)
-* [李宇-QEMU/KVM基本实现](./PPT/李宇-QEMU//KVM基本实现.pdf)
-* [李宇-RISC-V-Hypervisor-Extension基本设定](./PPT/李宇-RISC-V-Hypervisor-Extension-基本设定.pdf)
-* [胡柯洋-Rust-Shyper Monitor VM设计](./PPT/胡柯洋-Rust-Shyper-MonitorVM设计.pptx)
-* [胡柯洋-Rust-Shyper多平台兼容和移植经验](./PPT/胡柯洋-Rust-Shyper多平台兼容和移植经验.pptx)
-* [胡柯洋-基于Rust的嵌入式虚拟机监视器及热更新技术](./PPT/基于Rust的嵌入式虚拟机监视器及热更新技术-胡柯洋.pptx)
+* [李宇-QEMU/KVM基本实现](./PPT/李宇-QEMU:KVM基本实现.pdf)
+* [李宇-RISC-V-Hypervisor-Extension基本设定](./PPT/李宇-RISC-V-Hypervisor-Extension基本设定.pdf)
+* [胡柯洋-Rust-Shyper Monitor VM设计](./PPT/胡柯洋-Rust-Shyper-MonitorVM设计.pdf)
+* [胡柯洋-Rust-Shyper多平台兼容和移植经验](./PPT/胡柯洋-Rust-Shyper多平台兼容和移植经验.pdf)
+* [胡柯洋-基于Rust的嵌入式虚拟机监视器及热更新技术](./PPT/胡柯洋-基于Rust的嵌入式虚拟机监视器及热更新技术.pdf)
 * [](./PPT/.pdf)
 
 ## 参考资料
