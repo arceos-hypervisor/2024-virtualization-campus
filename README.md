@@ -14,6 +14,16 @@
 * [虚拟机迁移](./tasks/vm_migration.md)
 * [实时虚拟机](./tasks/real_time_vm.md)
 
+
+## 课程PPT
+
+* [莫策-ARMv8体系结构与硬件虚拟化](./PPT/莫策-ARMv8体系结构与硬件虚拟化.pdf)
+* [莫策-Rust-Shyper代码结构与设计实现](./PPT/莫策-Rust-Shyper代码结构与设计实现.pdf)
+* [齐呈祥-hypercraft设计理念与架构](./PPT/齐呈祥-hypercraft设计理念与架构.pdf)
+* [李宇-QEMU/KVM基本实现](./PPT/李宇-QEMU/KVM基本实现.pdf)
+* [李宇-RISC-V-Hypervisor-Extension基本设定](./PPT/李宇-RISC-V-Hypervisor-Extension基本设定.pdf)
+* [](./PPT/.pdf)
+
 ## 参考资料
 ### aarch64
 - [Arm® Architecture Reference Manual for A-profile architecture](https://developer.arm.com/documentation/ddi0487/latest/)
