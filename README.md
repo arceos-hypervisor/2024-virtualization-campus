@@ -25,6 +25,7 @@
 * [胡柯洋-Rust-Shyper Monitor VM设计](./PPT/胡柯洋-Rust-Shyper-MonitorVM设计.pdf)
 * [胡柯洋-Rust-Shyper多平台兼容和移植经验](./PPT/胡柯洋-Rust-Shyper多平台兼容和移植经验.pdf)
 * [胡柯洋-基于Rust的嵌入式虚拟机监视器及热更新技术](./PPT/胡柯洋-基于Rust的嵌入式虚拟机监视器及热更新技术.pdf)
+* [季朋-virtio 基本原理和驱动/设备交互](https://zhuanlan.zhihu.com/p/639301753?utm_psn=1704906158266068992)
 * [](./PPT/.pdf)
 
 ## 参考资料
