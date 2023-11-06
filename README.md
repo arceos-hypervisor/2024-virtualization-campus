@@ -19,9 +19,9 @@
 
 * [莫策-ARMv8体系结构与硬件虚拟化](./PPT/莫策-ARMv8体系结构与硬件虚拟化.pdf)
 * [莫策-Rust-Shyper代码结构与设计实现](./PPT/莫策-Rust-Shyper代码结构与设计实现.pdf)
-* [齐呈祥-hypercraft设计理念与架构](./PPT/齐呈祥-hypercraft设计理念与架构.pdf)
-* [李宇-QEMU/KVM基本实现](./PPT/李宇-QEMU/KVM基本实现.pdf)
-* [李宇-RISC-V-Hypervisor-Extension基本设定](./PPT/李宇-RISC-V-Hypervisor-Extension基本设定.pdf)
+* [齐呈祥-hypercraft设计理念与架构](./PPT/齐呈祥-hypercraft&nbsp设计理念与架构.pdf)
+* [李宇-QEMU/KVM基本实现](./PPT/李宇-QEMU:KVM&nbsp基本实现.pdf)
+* [李宇-RISC-V-Hypervisor-Extension基本设定](./PPT/李宇-RISC-V&nbspHypervisor&nbspExtension&nbsp基本设定.pdf)
 * [](./PPT/.pdf)
 
 ## 参考资料
