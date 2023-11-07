@@ -29,9 +29,10 @@
 3. 初始化页表以及EL2与EL1的页表基址寄存器，开启MMU
 4. 切换到EL1执行系统
 ## 1.4 运行
-假设我们以下操作都是在/home/user（~）进行操作。
-### 1.4.1 编译镜像
-我们目前上面能够运行的OS为[NimbOS](https://github.com/equation314/nimbos)。为了编译这个OS内核，执行以下指令：
+假设我们以下操作都是在$(WORKSPACE)目录下进行操作。
+### 1.4.1 运行nimbos
+#### 编译镜像
+1.4.1节运行的OS为[NimbOS](https://github.com/equation314/nimbos)。为了编译这个OS内核，执行以下指令：
 ```shell
 # set up cross-compile tools
 # download
@@ -54,8 +55,8 @@ make env
 cd ../user && make ARCH=aarch64 build
 cd ../kernel && make build ARCH=aarch64 LOG=warn
 ```
-此时会在~/nimbos/kernel/target/aarch64/release下看到编译好的nimbos.bin
-### 1.4.2 运行hypervisor
+此时会在$(WORKSPACE)/nimbos/kernel/target/aarch64/release下看到编译好的nimbos.bin
+#### 运行hypervisor
 在qemu中运行arceOS，并在arceOS上起虚拟机。
 ```shell
 # clone arceos
@@ -63,7 +64,7 @@ git clone https://github.com/arceos-hypervisor/arceos.git -b hypervisor --recurs
 cd arceos
 
 # move nimbos image to arceos hv 
-cp ~/nimbos/kernel/target/aarch64/release/nimbos.bin apps/hv/guest/nimbos/nimbos-aarch64.bin
+cp $(WORKSPACE)/nimbos/kernel/target/aarch64/release/nimbos.bin apps/hv/guest/nimbos/nimbos-aarch64.bin
 
 # set up rust tools
 cargo install cargo-binutils
@@ -165,6 +166,90 @@ test kernel task: pid = TaskId(3), arg = 0xbeef
 Rust user shell
 >>
 ```
+### 1.4.2 运行linux
+#### 编译linux镜像
+1.4.2节运行的系统为linux。为了编译这个OS内核，执行以下指令：
+```shell
+# set up cross-compile tools
+# download
+wget https://musl.cc/aarch64-linux-musl-cross.tgz
+# install
+tar zxf aarch64-linux-musl-cross.tgz
+# exec below command in bash
+export PATH=`pwd`/aarch64-linux-musl-cross/bin:$PATH
+# OR add below info in ~/.bashrc
+# echo PATH=`pwd`/aarch64-linux-musl-cross/bin:$PATH >> ~/.bashrc
+
+# download and unzip linux kernel
+wget https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/snapshot/linux-6.2.15.tar.gz
+tar -xvf linux-6.2.15.tar.gz
+cd linux-6.2.15
+
+# build linux
+mkdir build
+make O=build ARCH=arm64 CROSS_COMPILE=aarch64-linux-musl- defconfig
+make O=build ARCH=arm64 CROSS_COMPILE=aarch64-linux-musl- #-j4 
+```
+#### 构建文件系统
+```shell
+# use busybox to build rootfs
+# download
+wget https://busybox.net/downloads/busybox-1.36.1.tar.bz2
+tar xvf busybox-1.36.1.tar.bz2
+
+# compile busybox
+cd busybox-1.36.1
+mkdir build
+make O=build ARCH=arm64 defconfig
+make O=build ARCH=arm64 menuconfig
+## select and save the following settings
+## Settings -> [*] Don't use /usr
+## Settings -> [*] Build static binary (no shared libs)
+## Settings -> (aarch64-linux-musl-) Cross compiler prefix
+make O=build #-j4
+make O=build install
+
+# build rootfs
+cd build/_install && mkdir -pv {etc,proc,sys,dev,usr/{bin,sbin}}
+cd ..
+## create a image
+dd if=/dev/zero of=rootfs.img bs=1M count=512 
+## format filesystem
+mkfs.ext4 rootfs.img
+## mount filesystem
+mkdir tmp
+sudo mount rootfs.img tmp
+## copy and create the content of the filesystem to mount point
+sudo cp -r _install/* tmp/
+cd tmp/dev
+sudo mknod console c 5 1
+sudo mknod null c 1 3
+sudo mknod tty1 c 4 1 
+sudo mknod tty2 c 4 1 
+sudo mknod tty3 c 4 1 
+sudo mknod tty4 c 4 1 
+cd ../../
+## umount filesystem
+sudo umount tmp
+```
+#### 运行hypervisor
+在qemu中运行arceOS，并在arceOS上起虚拟机。
+```shell
+# clone arceos
+git clone https://github.com/arceos-hypervisor/arceos.git -b hypervisor --recurse-submodules
+cd arceos
+
+# move linux image and rootfs to arceos hv 
+cp $(WORKSPACE)/linux-6.2.15/build/arch/arm64/boot/Image $(WORKSPACE)/arceos/apps/hv/guest/linux/linux-aarch64.bin
+cp $(WORKSPACE)/busybox-1.36.1/build/rootfs.img $(WORKSPACE)/arceos/apps/hv/guest/linux/linux-aarch64.img
+
+# set up rust tools
+cargo install cargo-binutils
+
+# build and run arceos aarch64 hypervisor
+make ARCH=aarch64 A=apps/hv HV=y LOG=info run
+```
+启动后即可进入linux系统。
 ## 1.5 练习
 1. 根据1.4节在arceos中运行nimbos
 2. 阅读[Armv8-A Virtualization](https://developer.arm.com/-/media/Arm%20Developer%20Community/PDF/Learn%20the%20Architecture/Armv8-A%20virtualization.pdf?revision=a765a7df-1a00-434d-b241-357bfda2dd31) Chapter 2（共4页），回答hypercraft是哪一种hypervisor。
