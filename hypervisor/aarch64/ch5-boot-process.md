@@ -1,7 +1,7 @@
 # 5. 启动流程详解
 下图展示了启动虚拟机的整体流程。ArceOS运行在EL1，会进行一些硬件寄存器相关的初始化。后续会跳转到apps/hv的main函数执行配置虚拟机的相关程序。配置完成后会调用hvc，进入EL2，进行具体的寄存器配置。最后会通过eret返回EL1，并且跳转到guest的kernel entry执行guest os。具体启动代码细节如下文所示。
 ![启动](./img/boot.png)
-## 5.1 ArceOS初始化
+## 5.1 ArceOS初始化 (axhal与axruntime)
 ### 5.1.1 _start() （modules/axhal/src/platform/aarch64_common/boot.rs）
 ```rust
 ...
