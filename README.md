@@ -4,6 +4,7 @@
 
 * [x86-64 Hypervisor介绍](./hypervisor/x86_64/README.md)
 * [ARM Hypervisor介绍](./hypervisor/aarch64/README.md)
+* [RISCV练习](./hypervisor/RISCV/exercises.md)
 
 ## 任务列表
 
