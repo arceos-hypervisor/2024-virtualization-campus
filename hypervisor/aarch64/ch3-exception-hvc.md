@@ -203,6 +203,7 @@ pub extern "C" fn lower_aarch64_synchronous(ctx: &mut ContextFrame) {
     msr     elr_el2, x10
     msr     spsr_el2, x11
   
+    ldp     x30,      [sp, 30 * 8]
     ldp     x28, x29, [sp, 28 * 8]
     ldp     x26, x27, [sp, 26 * 8]
     ldp     x24, x25, [sp, 24 * 8]

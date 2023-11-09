@@ -578,4 +578,3 @@ pub fn run(&mut self, vcpu_id: usize) {
 ## 5.3 练习
 1. 把kernel和dtb放到其他的内存地址后启动。可以把它们放到0x40000000吗？为什么？
     提示：除了修改apps/hv/src/main.rs中载入kernel和dtb的地址，还有哪些地方需要修改？关注scripts/make/qemu.mk、apps/hv/guest/nimbos/nimbos-aarch64.dts，注意dts如何编译成dtb。
-2. 分析如果需要启动linux，还需要哪些虚拟化功能的支持。（挑战练习，可选）
