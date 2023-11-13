@@ -30,6 +30,9 @@
 * [陈岳-x86虚拟化简述](./PPT/陈岳-x86虚拟化简述.pdf)
 * [陈岳-hcHyper项目架构与实现](./PPT/陈岳-hcHyper项目架构与实现.pdf)
 
+## 参考书籍
+* [系统虚拟化原理与实现](./book/系统虚拟化原理与实现.pdf)
+
 ## 参考资料
 ### aarch64
 - [Arm® Architecture Reference Manual for A-profile architecture](https://developer.arm.com/documentation/ddi0487/latest/)
