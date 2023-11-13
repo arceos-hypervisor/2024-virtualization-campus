@@ -1,5 +1,26 @@
 # 2023秋冬季训练营第三阶段-虚拟化方向
 
+> 往期视频讲座链接：https://os2edu.cn/course/120
+
+## 前置技能
+
+- 熟悉 x86、arm、risc-v 任一架构
+  - 函数调用规范
+  - 中断异常处理流程
+  - 页表机制实现过程
+
+## 资料阅读建议
+
+- 了解虚拟化相关基础概念
+  - 推荐[Docker，K8s，KVM，Hypervisor和微服务有什么区别联系吗？](https://www.zhihu.com/question/307537564/answer/583653317)
+- 各体系结构的实现方案介绍
+  - [莫策-ARMv8体系结构与硬件虚拟化](./PPT/莫策-ARMv8体系结构与硬件虚拟化.pdf)
+  - [齐呈祥-hypercraft设计理念与架构](./PPT/齐呈祥-hypercraft设计理念与架构.pdf)
+  - [陈岳-x86虚拟化简述](./PPT/陈岳-x86虚拟化简述.pdf)
+- 熟悉 ArceOS
+  - 推荐课程：[项目一：ArceOS单内核Unikernel](https://os2edu.cn/course/157) （不做实验，只听石磊老师讲感觉也可
+  - [ArceOS 设计&实现 - 组件化OS基础 - 1](https://www.bilibili.com/video/BV1th4y1b7e4/?spm_id_from=333.337.search-card.all.click&vd_source=1d65ea6deb9458981dfc8bd282f7a495)
+
 ## Hypervisor讲解
 
 * [x86-64 Hypervisor介绍](./hypervisor/x86_64/README.md)
@@ -15,8 +36,9 @@
 * [虚拟机迁移](./tasks/vm_migration.md)
 * [实时虚拟机](./tasks/real_time_vm.md)
 
-
 ## 课程PPT
+
+以下ppt对应的课程视频链接：https://os2edu.cn/course/120
 
 * [莫策-ARMv8体系结构与硬件虚拟化](./PPT/莫策-ARMv8体系结构与硬件虚拟化.pdf)
 * [莫策-Rust-Shyper代码结构与设计实现](./PPT/莫策-Rust-Shyper代码结构与设计实现.pdf)
