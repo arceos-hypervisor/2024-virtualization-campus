@@ -51,7 +51,7 @@
 * [季朋-virtio基本原理和驱动/设备交互](https://zhuanlan.zhihu.com/p/639301753?utm_psn=1704906158266068992)
 * [陈岳-x86虚拟化简述](./PPT/陈岳-x86虚拟化简述.pdf)
 * [陈岳-hcHyper项目架构与实现](./PPT/陈岳-hcHyper项目架构与实现.pdf)
-* [唐诗美-AARCH64 Hypercraft虚拟化实现](./PPT/唐诗美-AARCH64&nbsp;Hypercraft虚拟化实现.pdf)
+* [唐诗美-AARCH64 Hypercraft虚拟化实现](./PPT/唐诗美-AARCH64%20Hypercraft虚拟化实现.pdf)
 
 ## 参考书籍
 * [系统虚拟化原理与实现](./book/系统虚拟化原理与实现.pdf)
