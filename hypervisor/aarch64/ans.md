@@ -53,4 +53,4 @@ esr_el2的ec会显示为000000，查询文档可知可能的原因：
 ## 4.3.2
 直接使用gpm的translate方法即可，需要注意的是一开始未建立映射时会出现HyperError::Internal error，需要进行错误处理。
 ## 5.3.1
-分别修改apps/hv/src/main.rs处理dtb与kernel entry point的相关内容、apps/hv/guest/linux/linux-aarch64.dts中memory节点的reg并重新编译为dtb、以及srcipts/make/qemu.mk 56、57行内容。不能放到0x40000000，因为hypervisor的栈的内存是在这块区域。
+分别修改apps/hv/src/main.rs处理dtb与kernel entry point的相关内容、apps/hv/guest/linux/linux-aarch64.dts中memory节点的reg并利用dtc重新编译为dtb、以及srcipts/make/qemu.mk 56、57行内容。不能放到0x40000000，因为hypervisor的栈的内存是在这块区域。
