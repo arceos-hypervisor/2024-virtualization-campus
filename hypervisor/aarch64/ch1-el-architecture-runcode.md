@@ -228,8 +228,31 @@ sudo mknod tty1 c 4 1
 sudo mknod tty2 c 4 1 
 sudo mknod tty3 c 4 1 
 sudo mknod tty4 c 4 1 
-cd ../../
+## create /etc/fstab
+cd ../etc
+sudo vim fstab
+## copy following content to fstab
+proc     /proc                   proc     defaults        0 0
+sysfs    /sys                    sysfs    defaults        0 0
+## create /etc/init.d/rcS
+sudo mkdir init.d && cd init.d
+sudo vim rcS
+## copy following content to rcS
+#!/bin/sh
+echo -e "Welcome to arceos Linux"
+mount -a
+echo -e "Remounting the root filesystem"
+## create /etc/inittab
+cd ..
+sudo vim inittab
+## copy following content to inittab
+# /etc/inittab
+::sysinit:/etc/init.d/rcS
+console::respawn:-/bin/sh
+::ctrlaltdel:/sbin/reboot
+::shutdown:/bin/umount -a -r
 ## umount filesystem
+cd ../../
 sudo umount tmp
 ```
 #### 运行hypervisor
@@ -241,7 +264,7 @@ cd arceos
 
 # move linux image and rootfs to arceos hv 
 cp $(WORKSPACE)/linux-6.2.15/build/arch/arm64/boot/Image $(WORKSPACE)/arceos/apps/hv/guest/linux/linux-aarch64.bin
-cp $(WORKSPACE)/busybox-1.36.1/build/rootfs.img $(WORKSPACE)/arceos/apps/hv/guest/linux/linux-aarch64.img
+cp $(WORKSPACE)/busybox-1.36.1/build/rootfs.img $(WORKSPACE)/arceos/apps/hv/guest/linux/rootfs-aarch64.img
 
 # set up rust tools
 cargo install cargo-binutils
